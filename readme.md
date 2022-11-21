@@ -8,7 +8,7 @@ Tabular data or "excel-like" data is the typical form datasets are stored in. Gr
 
 Graph data and the algorithms designed for this form of data has grown into a sub-domain of AI called graph neural networks. A very clear and visual introduction of graphs can be find here: [gentle introduction to graphs](https://distill.pub/2021/gnn-intro/)
 
-In a similar fashion a graph can be constructed to contain information from a computer network to be able to detect malicious connections. The jupyter notebooks and scripts go through the example of converting an open-source dataset to graphs and applying an algorithm.
+In a similar fashion a graph can be constructed to contain information from a computer network to be able to detect malicious connections. The jupyter notebooks and scripts go through the example of converting an open-source dataset to graphs and applying a graph neural network.
 
 * To understand how the code works go through the jupyter notebooks.
 * To quickly try out different preprocessing and training options use the python scripts through the command line.
