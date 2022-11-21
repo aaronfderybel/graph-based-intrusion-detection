@@ -34,7 +34,6 @@ Install the basic libraries through pip
 pip install -r requirements.txt
 ```
 
-Install the pytorch and pytorch geometric libraries in order.
-Depending on your hardware setup and OS this can be quite different.
-[Pytorch install](https://pytorch.org/get-started/locally/)
+Install the pytorch and pytorch geometric libraries in order. Depending on your hardware setup and OS this can be quite different.\
+[Pytorch install](https://pytorch.org/get-started/locally/)\
 [Pytorch geo install](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
