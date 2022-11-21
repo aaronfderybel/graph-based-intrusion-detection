@@ -13,9 +13,18 @@ In a similar fashion a graph can be constructed to contain information from a co
 * To understand how the code works go through the jupyter notebooks.
 * To quickly try out different preprocessing and training options use the python scripts through the command line.
 
-To download and preprocess the example dataset with default arguments run from terminal: `python preprocess.py`.
-If you would like to change some options in the preprocessing run from terminal: `python preprocess.py -h`
-This shows all the possible arguments that can be adapted and their meaning. The script for training and evaluating graphs is constructed in a similar way.
+To run the scripts with the default options run the scripts `preprocess.py` and `train_graph.py` from terminal.\
+
+To show all the arguments of a script you can run from terminal
+```bash
+python preprocess.py -h
+```
+
+For example you can run 
+```bash
+python preprocess.py --test-size 0.4
+```
+to run the preprocessing script to make a test set with 40% of the data.
 
 
 ## install instructions
