@@ -16,6 +16,7 @@ from tqdm.auto import tqdm
 import pandas as pd
 import json
 import pickle
+import os
 
 
 
@@ -194,6 +195,8 @@ def main(args):
     cr = classification_report(preds.cpu(), labels.cpu())
     print(cr)
     cr_df = pd.DataFrame(classification_report(preds.cpu(), labels.cpu(), output_dict=True)).transpose()
+    
+    os.makedirs(os.path.dirname(args.path_eval), exist_ok=True)
     with open(args.path_eval, 'w') as f:
         f.write('## Settings Training\n')
         f.write(json.dumps(vars(args)))
@@ -203,7 +206,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='train and evaluate Graph neural networks on network data')
     parser.add_argument('-td','--train-data', type=str, help='path of processed trainingsdata', default='data/train/week1_prep_train.pkl')
-    parser.add_argument('-vd','--val-data', type=str, help='path of processed trainingsdata', default='data/eval/week1_prep_val.pkl')
+    parser.add_argument('-vd','--val-data', type=str, help='path of processed validation data', default='data/eval/week1_prep_val.pkl')
     parser.add_argument('-pe','--path-eval', type=str, help='path of evaluation results', default='runs/exp0.txt')
     
     parser.add_argument('-hc','--hidden-channels', type=int, help='number of hidden channels for algorithm', default=64)

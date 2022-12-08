@@ -4,7 +4,7 @@ import zipfile
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import QuantileTransformer
 import pickle
-import os.path
+import os
 from os import path
 import pandas as pd
 import numpy as np
@@ -12,6 +12,7 @@ import argparse
 
 
 def download_extract():
+    os.makedirs('data/')
     url = 'https://www.hs-coburg.de/fileadmin/hscoburg/WISENT-CIDDS-001.zip'
     wget.download(url, out='data/')
     with zipfile.ZipFile("data/WISENT-CIDDS-001.zip","r") as zip_ref:
@@ -85,7 +86,11 @@ def prepare_datasets(args):
         qt.fit(df_train[['Duration', 'Packets', 'Bytes']])
         df_train[['Duration', 'Packets', 'Bytes']] = qt.transform(df_train[['Duration', 'Packets', 'Bytes']])
         df_test[['Duration', 'Packets', 'Bytes']] = qt.transform(df_test[['Duration', 'Packets', 'Bytes']])
-
+        
+        
+        os.makedirs('data/train', exist_ok=True)
+        os.makedirs('data/eval', exist_ok=True)
+        
         f = open('data/train/week1_prep_train.pkl','wb')
         pickle.dump(df_train, f)
         f.close()
