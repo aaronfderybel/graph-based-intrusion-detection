@@ -1,9 +1,0 @@
-wget
-pandas
-scikit-learn
-seaborn
-tabulate
-networkx
-pillow
-svgpath2mpl
-svgpathtools
